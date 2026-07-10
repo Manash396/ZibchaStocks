@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mk.zibchastocks.R
 import com.mk.zibchastocks.databinding.ActivityMainBinding
-import com.mk.zibchastocks.presentation.viewmodel.ViewPagerAdapter
+import com.mk.zibchastocks.presentation.adapter.ViewPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 
