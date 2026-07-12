@@ -1,28 +1,26 @@
 package com.mk.zibchastocks.domain.export.usecase
 
 import com.mk.zibchastocks.domain.export.exporter.Exporter
-import com.mk.zibchastocks.domain.export.model.ExportRow
+import com.mk.zibchastocks.domain.export.mapper.ExportMapper
 import com.mk.zibchastocks.domain.export.model.ExportType
-import java.io.File
+import javax.inject.Inject
 
-class ExportDataUseCase<T>(
-    private val csvExporter: Exporter,
-    private val jsonExporter: Exporter,
-    private val pdfExporter: Exporter
+class ExportDataUseCase @Inject constructor(
+    private val exporters : Map<ExportType , @JvmSuppressWildcards Exporter>,
 ) {
 
-    fun execute(
+    fun <T> execute(
         data: List<T>,
-        type: ExportType,
+        mapper : ExportMapper<T>,
+        exportType: ExportType,
         fileName: String
     ){
+        val rows = data.map { mapper.map(it) }
 
+        val exporter = exporters[exportType]
+            ?: throw IllegalArgumentException("Exporter not found")
 
-        when (type) {
-            ExportType.CSV -> csvExporter.export(rows, fileName)
-            ExportType.JSON -> jsonExporter.export(rows, fileName)
-            ExportType.PDF -> pdfExporter.export(rows, fileName)
-        }
+        exporter.export(rows, fileName)
     }
 
 }
