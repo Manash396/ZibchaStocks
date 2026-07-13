@@ -1,4 +1,4 @@
-package com.mk.zibchastocks.data.storage
+package com.mk.zibchastocks.data.core.storage
 
 import android.content.ContentValues
 import android.content.Context
@@ -33,7 +33,7 @@ class FileStorage(
     }
 
     fun saveCsv(content : String, fileName: String) : Uri{
-        return  if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+        return  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             saveCsvViaMediaStore(content, fileName)
         } else {
             saveCsvViaFileSystem(content, fileName)

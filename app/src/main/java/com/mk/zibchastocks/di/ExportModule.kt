@@ -4,7 +4,7 @@ import android.content.Context
 import com.mk.zibchastocks.data.export.csv.CsvExporter
 import com.mk.zibchastocks.data.export.json.JsonExporter
 import com.mk.zibchastocks.data.export.pdf.PdfExporter
-import com.mk.zibchastocks.data.storage.FileStorage
+import com.mk.zibchastocks.data.core.storage.FileStorage
 import com.mk.zibchastocks.domain.export.exporter.Exporter
 import com.mk.zibchastocks.domain.export.model.ExportType
 import dagger.Module

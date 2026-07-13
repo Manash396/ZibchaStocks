@@ -3,6 +3,6 @@ package com.mk.zibchastocks.data.contacts.remote.datasource
 import com.mk.zibchastocks.data.contacts.remote.api.ContactApiService
 
 class ContactRemoteDataSource(
-    private val apiService: ContactApiService
 ) {
+    // will fetch from api and return Response
 }

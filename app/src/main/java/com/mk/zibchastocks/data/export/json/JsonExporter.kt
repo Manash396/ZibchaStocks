@@ -1,6 +1,6 @@
 package com.mk.zibchastocks.data.export.json
 
-import com.mk.zibchastocks.data.storage.FileStorage
+import com.mk.zibchastocks.data.core.storage.FileStorage
 import com.mk.zibchastocks.domain.export.exporter.Exporter
 import com.mk.zibchastocks.domain.export.model.ExportRow
 import org.json.JSONArray
