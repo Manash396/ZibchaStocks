@@ -42,8 +42,8 @@ class FileStorage(
 
     private fun saveJsonViaMediaStore(content: String, fileName: String): Uri {
         val values = ContentValues().apply {
-            put(MediaStore.MediaColumns.DISPLAY_NAME, "$fileName.json")
-            put(MediaStore.MediaColumns.MIME_TYPE, "application/json")
+            put(MediaStore.MediaColumns.DISPLAY_NAME, "$fileName.txt")
+            put(MediaStore.MediaColumns.MIME_TYPE, "text/plain")
             put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
         }
 
@@ -66,7 +66,7 @@ class FileStorage(
 
         if (!downloadPath.exists()) downloadPath.mkdirs()
 
-        val file = File(downloadPath, "$fileName.json")
+        val file = File(downloadPath, "$fileName.txt")
 
         file.writeText(content)
 
@@ -78,8 +78,8 @@ class FileStorage(
     }
     private fun saveCsvViaMediaStore(content: String, fileName: String): Uri {
         val values = ContentValues().apply {
-            put(MediaStore.MediaColumns.DISPLAY_NAME, "$fileName.csv")
-            put(MediaStore.MediaColumns.MIME_TYPE, "text/csv")
+            put(MediaStore.MediaColumns.DISPLAY_NAME, "$fileName.txt")
+            put(MediaStore.MediaColumns.MIME_TYPE, "text/plain")
             put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
         }
 
@@ -102,7 +102,7 @@ class FileStorage(
 
         if (!downloadPath.exists()) downloadPath.mkdirs()
 
-        val file  = File(downloadPath, "$fileName.csv")
+        val file  = File(downloadPath, "$fileName.txt")
 
         file.writeText(content)  // for text format
 

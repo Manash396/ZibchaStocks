@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="6dp"
+    android:padding="6dp"
     tools:context=".presentation.contacts.ContactFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -24,9 +25,12 @@
         android:backgroundTint="@color/lightGray"
         android:layout_gravity="bottom|end"
         app:tint="@color/green"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="9dp"
         />
 
     <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

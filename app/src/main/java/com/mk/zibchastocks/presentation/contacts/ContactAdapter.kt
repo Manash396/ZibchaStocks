@@ -32,6 +32,7 @@ class ContactAdapter : ListAdapter<Contact, ContactAdapter.ContactViewHolder>(DI
         fun bind(contact : Contact){
             itemBinding.tvName.text = contact.name
             itemBinding.tvPhone.text = contact.phone
+            itemBinding.tvAvatar.text = contact.name[0].toString()
         }
     }
 

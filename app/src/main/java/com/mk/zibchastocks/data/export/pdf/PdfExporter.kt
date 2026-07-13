@@ -19,22 +19,23 @@ class PdfExporter(
             color = Color.BLUE
         }
 
-        val pageWight = 1200
-        val pageHeight= 2000    //  1 point = 1/72 inch
+        val pageWidth = 595
+        val pageHeight = 842  //  1 point = 1/72 inch
 
-        val columnSpacing = 250
+        val columnSpacing = 150
         val rowSpacing  = 40
 
         val headers = rows.first().columns.keys.toList()
         var pageNumber  = 1
         var y =  50
 
-        var pageInfo = PdfDocument.PageInfo.Builder(pageWight, pageHeight, pageNumber).create()
+        var pageInfo = PdfDocument.PageInfo.Builder(pageWidth, pageHeight, pageNumber).create()
         var page  = pdfDocument.startPage(pageInfo)
         var canvas = page.canvas
 
         // function to draw header
         fun drawHeaders() {
+            paint.color = Color.BLUE
             var x = 50
             headers.forEachIndexed { index, header ->
                 canvas.drawText(header, (x + (index*columnSpacing)).toFloat(), y.toFloat() , paint )
@@ -52,7 +53,7 @@ class PdfExporter(
 
                 pageNumber++
 
-                pageInfo = PdfDocument.PageInfo.Builder(pageWight,pageHeight,pageNumber).create()
+                pageInfo = PdfDocument.PageInfo.Builder(pageWidth,pageHeight,pageNumber).create()
                 page =  pdfDocument.startPage(pageInfo)
                 canvas = page.canvas
 
@@ -60,9 +61,8 @@ class PdfExporter(
 
                 // draw the headers
                 drawHeaders()
-                paint.color = Color.BLACK
             }
-
+            paint.color = Color.BLACK
             var x  = 50
 
             // need the keys

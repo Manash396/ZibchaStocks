@@ -41,7 +41,7 @@
             android:text="@string/mk_mk"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
 
             app:layout_constraintStart_toEndOf="@id/tvAvatar"
             app:layout_constraintTop_toTopOf="@id/tvAvatar"

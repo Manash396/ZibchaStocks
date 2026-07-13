@@ -14,4 +14,6 @@ object AppConstant {
         const val CHANGE_PERCENT = "Change (%)"
     }
 
+    val exportOptions = arrayOf("Export as CSV", "Export as PDF", "Export as JSON")
+
 }

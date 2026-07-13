@@ -20,7 +20,7 @@ class JsonExporter(
 
         rows.forEach { row ->
             val jsonObject = JSONObject()
-            row.columns.forEach { col, value ->
+            row.columns.forEach { (col, value) ->
                 jsonObject.put(col,value)
             }
             jsonArray.put(jsonObject)
