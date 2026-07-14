@@ -9,6 +9,8 @@ class ExportDataUseCase @Inject constructor(
     private val exporters : Map<ExportType , @JvmSuppressWildcards Exporter>,
 ) {
 
+    // it follows OCP Open - closed principle
+
     fun <T> execute(
         data: List<T>,
         mapper : ExportMapper<T>,
